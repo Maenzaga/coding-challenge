@@ -1,0 +1,11 @@
+$primary-clr: #28965a;
+$secondary-clr: #faf8d4;
+$my-font: "Nunito", sans-serif;
+
+.main-content {
+  background-color: $primary-clr;
+  padding: 16px;
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(5, 1fr);
+}

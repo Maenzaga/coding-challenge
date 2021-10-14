@@ -1,0 +1,50 @@
+$primary-clr: #28965a;
+$secondary-clr: #faf8d4;
+$my-font: "Nunito", sans-serif;
+
+.card {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+    height: 20rem;
+    margin-bottom: 1rem;
+    box-shadow: 1rem 0.5rem 1rem #165833;
+    background-color: $secondary-clr;
+    justify-self: center;
+    align-items: center;
+    border-radius: 5%;
+    cursor: pointer;
+  }
+  &-image {
+    height: 20rem;
+    margin-top: 0.5rem;
+    border-radius: 5%;
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $my-font;
+    &__model {
+      margin-top: 10px;
+      margin-bottom: 0;
+      font-weight: bold;
+      font-size: large;
+      color: $primary-clr;
+    }
+    &__brand {
+      margin: 0;
+      align-self: flex-start;
+      font-style: italic;
+      color: $primary-clr;
+    }
+    &__price {
+      margin-top: 0.3rem;
+      margin-left: 6rem;
+      font-weight: bolder;
+      font-size: x-large;
+      color: $primary-clr;
+    }
+  }
+}

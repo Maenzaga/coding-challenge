@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,700;0,900;1,300;1,700&display=swap");
+$primary-clr: #28965a;
+$secondary-clr: #faf8d4;
+$my-font: "Nunito", sans-serif;
+
+header {
+  height: 8rem;
+  background-color: $primary-clr;
+}
+
+.banner {
+  display: flex;
+}
+
+$width: 21px;
+.panel {
+  position: relative;
+  width: $width;
+  height: 120px;
+  // border: 1px solid white;
+  overflow: hidden;
+  animation: rotate 8s var(--delay) infinite ease-in-out reverse;
+}
+
+@keyframes rotate {
+  0%,
+  10% {
+    transform: rotateX(0deg);
+  }
+  90%,
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.panel::before {
+  position: absolute;
+  left: var(--left);
+  content: "Mobile Store";
+  font-size: 96px;
+  font-family: $my-font;
+  font-weight: bold;
+  width: max-content;
+  color: hsl(57, 79%, 91%);
+}
+
+@for $i from 0 to 27 {
+  .panel:nth-child(#{$i + 1}) {
+    --left: #{$width * $i * -1};
+    /* --hue: #{200 / 50 * ($i + 1)}; */
+    --delay: #{$i * 0.06s};
+  }
+}
