@@ -1,13 +1,13 @@
 $primary-clr: #28965a;
-$secondary-clr: #faf8d4;
+$secondary-clr: rgba(250, 248, 212, 0.95);
 $my-font: "Nunito", sans-serif;
 
 .card {
   &-container {
     display: flex;
     flex-direction: column;
-    width: 12rem;
-    height: 20rem;
+    width: 13rem;
+    height: 20.5rem;
     margin-bottom: 1rem;
     box-shadow: 1rem 0.5rem 1rem #165833;
     background-color: $secondary-clr;
@@ -18,20 +18,21 @@ $my-font: "Nunito", sans-serif;
   }
   &-image {
     height: 20rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     border-radius: 5%;
   }
   &-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     font-family: $my-font;
     &__model {
       margin-top: 10px;
       margin-bottom: 0;
+
       font-weight: bold;
       font-size: large;
-      color: $primary-clr;
+      color: #1a5434;
     }
     &__brand {
       margin: 0;

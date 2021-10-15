@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Device } from "../../models/Devices";
 import { ProductDetailsModal } from "../ProductDetailsModal/ProductDetailsModal";
 import "./styles.scss";
 
@@ -26,7 +27,6 @@ export const ProductCard = ({
         <p className="card-info__brand">{brand}</p>
         <p className="card-info__price">{price} $</p>
       </section>
-      <ProductDetailsModal />
     </div>
   );
 };

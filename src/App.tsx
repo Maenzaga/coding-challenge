@@ -6,7 +6,7 @@ import { ProductListPage } from "./components/ProducListPage/ProducListPage";
 import { ProductHeader } from "./components/ProductHeader/ProductHeader";
 
 function App() {
-  const { data, error } = useFetchDevices();
+  const { data } = useFetchDevices();
   return (
     <>
       <ProductHeader />

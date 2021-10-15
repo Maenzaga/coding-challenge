@@ -4,13 +4,12 @@ import { Device, DeviceDetailApi, DeviceDetailResponse, DevicesApiResponse } fro
 import { useFetchDevices } from "./useFetchDevices"
 
 export const useDeleteDevices = (id:string) =>{
-    const [devices, setDevices] = useState<Device[]>([])
-
+    const [devicesNew, setDevices] = useState<Device[]>([])
     const {data} = useFetchDevices();
 
     const removeDevice = async (id: string) =>{
         await api.delete(`/product/${id}`);
-        const newDevicesList = devices.filter((device)=>{
+        const newDevicesList = devicesNew.filter((device)=>{
             return device.id !== id;
         });
         setDevices(newDevicesList);
