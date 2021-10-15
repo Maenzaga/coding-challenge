@@ -23,7 +23,8 @@ $my-font: "Nunito", sans-serif;
       display: flex;
       flex-direction: row;
       &--image {
-        height: 20rem;
+        height: 30rem;
+        width: 25.1rem;
         border-radius: 5%;
       }
     }
@@ -41,12 +42,22 @@ $my-font: "Nunito", sans-serif;
 }
 
 p {
-  &.modal-content__info--text {
+  &.modal-content__info--title {
     margin-bottom: 0;
     margin-top: 0;
     margin-left: 1rem;
     font-family: $my-font;
     font-weight: bolder;
+    font-size: small;
+    color: $secondary-clr;
+  }
+  &.modal-content__info--text {
+    margin-bottom: 0.3rem;
+    margin-top: 0;
+    margin-left: 1rem;
+    font-family: $my-font;
+    font-weight: normal;
+    font-size: smaller;
     color: $secondary-clr;
   }
 }

@@ -7,6 +7,16 @@ $my-font: "Nunito", sans-serif;
   flex-direction: column;
   padding: 6px;
   background-color: $primary-clr;
+  &__loading {
+    background-color: $primary-clr;
+    min-height: 100vh;
+    height: 100%;
+    font-family: $my-font;
+    color: #00662e;
+    padding: 3rem;
+    font-weight: 900;
+    font-size: 12rem;
+  }
   &__search {
     align-self: center;
     &-box {

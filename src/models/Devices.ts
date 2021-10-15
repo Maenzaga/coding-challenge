@@ -26,8 +26,8 @@ export type DeviceDetailApi = {
     "displayResolution": string;
     "battery": string;
     "primaryCamera": string[];
-    "secondaryCamera": string[];
-    "dimentiones":string;
+    "secondaryCmera": string[];
+    "dimentions":string;
     "weight":string;
 }
 export type DeviceDetail = {
@@ -42,8 +42,8 @@ export type DeviceDetail = {
     displayResolution: string;
     battery: string;
     primaryCamera: string[];
-    secondaryCamera: string[];
-    dimentiones:string;
+    secondaryCmera: string[];
+    dimentions:string;
     weight:string;
 }
 
