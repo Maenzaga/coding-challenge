@@ -1,0 +1,52 @@
+$primary-clr: #28965a;
+$secondary-clr: #faf8d4;
+$my-font: "Nunito", sans-serif;
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(137, 228, 92, 0.5);
+  &-content {
+    padding: 16px;
+    width: 40rem;
+    background-color: $primary-clr;
+    border-radius: 3%;
+    box-shadow: 1rem 1rem 1rem #165833;
+    &__info {
+      display: flex;
+      flex-direction: row;
+      &--image {
+        height: 20rem;
+        border-radius: 5%;
+      }
+    }
+    &__actions {
+      margin-top: 1rem;
+      &--close {
+        background-color: $primary-clr;
+        border-radius: 5%;
+        border-style: none;
+        font-family: $my-font;
+        color: $secondary-clr;
+      }
+    }
+  }
+}
+
+p {
+  &.modal-content__info--text {
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 1rem;
+    font-family: $my-font;
+    font-weight: bolder;
+    color: $secondary-clr;
+  }
+}

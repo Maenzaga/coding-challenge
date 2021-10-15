@@ -3,9 +3,34 @@ $secondary-clr: #faf8d4;
 $my-font: "Nunito", sans-serif;
 
 .main-content {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
   background-color: $primary-clr;
-  padding: 16px;
-  display: grid;
-  gap: 3px;
-  grid-template-columns: repeat(5, 1fr);
+  &__search {
+    align-self: center;
+    &-box {
+      border-radius: 5%;
+      background-color: hsla(57, 96%, 54%, 0.925);
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      color: #08ae53;
+      font-family: $my-font;
+      font-weight: bold;
+      font-size: 1.5rem;
+      height: 2rem;
+      width: 16rem;
+      border: 0;
+      &::placeholder {
+        color: #08ae53;
+      }
+    }
+  }
+  &__list {
+    background-color: $primary-clr;
+    padding: 10px;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

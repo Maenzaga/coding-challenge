@@ -3,14 +3,7 @@ import useSWR from "swr"
 import { DeviceDetailResponse } from "../models/Devices"
 
 export const useFetchDetails = (id:string) =>{
-    const [deviceData, setDeviceData] = useState<DeviceDetailResponse>() 
-    const {data, error} = useSWR<DeviceDetailResponse>(`/product/${id}`)
+    const {data, error} = useSWR<DeviceDetailResponse>(`/product/${id}`, {suspense:true})
 
-    useEffect(()=>{
-        if (data){
-            setDeviceData(data)
-        }
-    }, [data])
-
-    return {data: deviceData, error, isLoading:!data&&!error}
+    return {data, error, isLoading:!data&&!error}
 }
