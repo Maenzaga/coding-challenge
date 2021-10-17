@@ -1,4 +1,5 @@
 import "./styles.scss";
+/* import {count} from "../../contexts/CartContext" */
 
 export const ProductHeader = () => {
   return (
@@ -35,6 +36,7 @@ export const ProductHeader = () => {
         </div>
         <div className="screen"></div>
       </div>
+      {/* <div>{count}</div> */}
     </header>
   );
 };

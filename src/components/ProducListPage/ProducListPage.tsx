@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useFetchDevices } from "../../hooks/useFetchDevices";
 import { Device } from "../../models/Devices";
 import { ProductCard } from "../ProductCard/ProductCard";
+import { ProductFooter } from "../ProductFooter/ProductFooter";
+import { ProductHeader } from "../ProductHeader/ProductHeader";
 import "./styles.scss";
 
 type DevicesListProps = {
@@ -20,7 +22,8 @@ export const ProductListPage = ({ devices }: DevicesListProps) => {
   }, [isLoading]);
 
   return (
-    <>
+    <div className="app-container">
+      <ProductHeader />
       {!loading ? (
         <main className="main-content">
           <div className="main-content__search">
@@ -63,6 +66,7 @@ export const ProductListPage = ({ devices }: DevicesListProps) => {
       ) : (
         <main className="main-content__loading">Loading...</main>
       )}
-    </>
+      <ProductFooter />
+    </div>
   );
 };

@@ -1,6 +1,4 @@
 import { Suspense, useState } from "react";
-import { useFetchDetails } from "../../hooks/useFetchDetails";
-import { Device } from "../../models/Devices";
 import { ProductDetailsModal } from "../ProductDetailsModal/ProductDetailsModal";
 import "./styles.scss";
 
@@ -37,7 +35,7 @@ export const ProductCard = ({
       <section className="card-info">
         <p className="card-info__model">{model}</p>
         <p className="card-info__brand">{brand}</p>
-        <p className="card-info__price">{price} $</p>
+        <p className="card-info__price">{!price ? 0 : price} $</p>
       </section>
       {showModal ? (
         <Suspense fallback={<h1>Loading posts...</h1>}>

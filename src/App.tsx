@@ -1,13 +1,17 @@
 import { useFetchDevices } from "./hooks/useFetchDevices";
 import { ProductListPage } from "./components/ProducListPage/ProducListPage";
-import { ProductHeader } from "./components/ProductHeader/ProductHeader";
+import { CartConext } from "./contexts/CartContext";
+import { useState } from "react";
 
 function App() {
-  const { data } = useFetchDevices();
+  const { data, isError } = useFetchDevices();
+  /* const [count, setCount] = useState(0); */
   return (
     <>
-      <ProductHeader />
+      {/* <CartConext.Provider value={{ count, setCount }}> */}
       <ProductListPage devices={data} />
+      {isError && alert(`Ha sucedido un error! ${isError}`)}
+      {/* </CartConext.Provider> */}
     </>
   );
 }
