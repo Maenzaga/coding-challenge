@@ -1,7 +1,5 @@
 import { useFetchDevices } from "./hooks/useFetchDevices";
 import { ProductListPage } from "./components/ProducListPage/ProducListPage";
-import { CartConext } from "./contexts/CartContext";
-import { useState } from "react";
 
 function App() {
   const { data, isError } = useFetchDevices();
