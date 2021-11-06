@@ -1,17 +1,19 @@
-import { useCallback, useContext } from "react";
-import { CartContext } from "../contexts/CartContext";
-import { CartRequestBody } from "../models/Devices";
-import api from "../api/devices";
+import { useCallback, useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
+import { CartRequestBody } from '../models/Devices';
+import api from '../api/devices';
 
 export const useAddToCart = (props: CartRequestBody) => {
   const [count, setCartCount] = useContext(CartContext);
 
   const addToCart = useCallback(async () => {
     try {
-      await api.post("/cart", props);
+      await api.post('/cart', props);
       setCartCount(count + 1);
-    } catch (error) {}
-  }, []);
+    } catch (error) {
+      // TODO
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return addToCart;
 };

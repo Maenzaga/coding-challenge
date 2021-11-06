@@ -1,10 +1,10 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState } from 'react';
 
 type CartContextProps = [number, (count: number) => void];
 
 export const CartContext = createContext<CartContextProps>([
   0,
-  (count: number) => {},
+  (_: number) => {}, // eslint-disable-line @typescript-eslint/no-empty-function
 ]);
 
 export const CartContextProvider: React.FC = ({ children }) => {

@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "prettier:fix": "prettier --write './src/'"
+    "prettier:fix": "prettier --write './src/'",
+    "lint": "eslint ./src --ext ts,tsx"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +48,11 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.4.1",
     "react-test-renderer": "^17.0.2"
   }
