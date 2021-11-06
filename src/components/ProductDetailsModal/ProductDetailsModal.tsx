@@ -1,9 +1,6 @@
-import { forwardRef, useEffect, useState } from "react";
 import { useFetchDetails } from "../../hooks/useFetchDetails";
-import api from "../../api/devices";
-import { DeviceDetail, DeviceDetailApi } from "../../models/Devices";
+import { useAddToCart } from "../../hooks/useAddToCart";
 import "./styles.scss";
-import { useFetchCart } from "../../hooks/useFetchCart";
 
 interface ProductDetailsModalProps {
   deviceId: string;
@@ -15,18 +12,12 @@ interface ProductDetailsModalProps {
 
 export const ProductDetailsModal = (props: ProductDetailsModalProps) => {
   const { data, error } = useFetchDetails(props.deviceId);
-  const [count, setCount] = useState(0);
 
-  const cartCount = useFetchCart({
+  const addToCart = useAddToCart({
     id: data?.id,
     colorCode: data?.options.colors[0].code,
     storageCode: data?.options.storages[0].code,
   });
-  const submitCart = (
-    event: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>
-  ) => {
-    setCount(cartCount);
-  };
 
   return (
     <div className="modal">
@@ -81,12 +72,12 @@ export const ProductDetailsModal = (props: ProductDetailsModalProps) => {
             {data?.options.storages[0].name}
           </p>
           {error && alert(`Ha sucedido un error! ${error}`)}
-          {/* <button
+          <button
             className="modal-content__footer-button"
             type="button"
-            onClick={submitCart}
-            onKeyDown={submitCart}
-          /> */}
+            onClick={addToCart}
+            onKeyDown={addToCart}
+          />
         </div>
       </div>
     </div>

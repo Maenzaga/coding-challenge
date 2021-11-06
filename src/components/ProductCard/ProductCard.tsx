@@ -19,9 +19,7 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   const [showModal, setShowModal] = useState(false);
 
-  const toggleModal = (
-    event: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>
-  ) => {
+  const toggleModal = () => {
     setShowModal(!showModal);
   };
 
@@ -37,7 +35,7 @@ export const ProductCard = ({
         <p className="card-info__brand">{brand}</p>
         <p className="card-info__price">{!price ? 0 : price} $</p>
       </section>
-      {showModal ? (
+      {showModal && (
         <Suspense fallback={<h1>Loading posts...</h1>}>
           <ProductDetailsModal
             show={showModal}
@@ -45,8 +43,6 @@ export const ProductCard = ({
             deviceId={id}
           />
         </Suspense>
-      ) : (
-        <></>
       )}
     </div>
   );

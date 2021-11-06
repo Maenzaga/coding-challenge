@@ -1,30 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useFetchDevices } from "../../hooks/useFetchDevices";
-import { Device } from "../../models/Devices";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { ProductFooter } from "../ProductFooter/ProductFooter";
 import { ProductHeader } from "../ProductHeader/ProductHeader";
 import "./styles.scss";
 
-type DevicesListProps = {
-  devices: Device[];
-};
-
-export const ProductListPage = ({ devices }: DevicesListProps) => {
+export const ProductListPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { isLoading, isError } = useFetchDevices();
-  const [loading, setLoading] = useState(isLoading);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(!isLoading);
-    }, 500);
-  }, [isLoading]);
+  const { data, isLoading, isError } = useFetchDevices();
 
   return (
     <div className="app-container">
       <ProductHeader />
-      {!loading ? (
+      {!isLoading ? (
         <main className="main-content">
           <div className="main-content__search">
             <input
@@ -37,8 +25,8 @@ export const ProductListPage = ({ devices }: DevicesListProps) => {
             />
           </div>
           <div className="main-content__list">
-            {devices
-              .filter((val) => {
+            {data
+              ?.filter((val) => {
                 if (searchTerm == "") {
                   return val;
                 } else if (
